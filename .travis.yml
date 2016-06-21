@@ -1,0 +1,21 @@
+sudo: false
+language: node_js
+node_js:
+  - 5.4.1
+sudo: false
+before_script:
+- npm i
+script:
+- npm test
+- npm run build
+cache:
+  bundler: true
+  directories:
+  - node_modules
+before_deploy: pip install --user awscli
+deploy:
+  provider: script
+  script: ~/.local/bin/aws s3 sync dist s3://morgondag/morgondag-site/ --region=eu-west-1 --delete
+  skip_cleanup: true
+  on:
+    branch: master
