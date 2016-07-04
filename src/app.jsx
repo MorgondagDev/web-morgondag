@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
+import News from './news.jsx'
+
 export default class extends React.Component {
 	constructor(props) {
 		super(props)
@@ -10,9 +12,10 @@ export default class extends React.Component {
 	}
 	render(){
 		return(
-			<article>
+			<section>
 				<h1>Morgondag</h1>
-			</article>
+				<News/>
+			</section>
 		)
 	}
 }
