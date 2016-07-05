@@ -40,3 +40,4 @@ dist/style.min.css
 .DS_Store
 dist/*.svg
 dist/public
+dist/fonts/
