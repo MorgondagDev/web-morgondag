@@ -26,12 +26,6 @@ export default class extends React.Component {
           title={this.state.post.title}>
             @{this.state.post.name}
         </a>
-        <a
-          className="profile"
-          href={this.state.post.url}
-          title={this.state.post.title}>
-          <img src={this.state.post.img} alt={this.state.post.name}/>
-        </a>
         <div className="tweet" dangerouslySetInnerHTML={{__html: this.state.post.tweet}} />
       </twitter>
     )
