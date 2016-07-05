@@ -31,6 +31,9 @@ module.exports = {
         'file?hash=sha512&digest=hex&name=[hash].[ext]',
         'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
       ]
+    }, {
+      test: /\.(eot|ttf|woff|woff2)$/,
+      loader: 'file?name=public/fonts/[name].[ext]'
     }]
   },
   resolve: {
