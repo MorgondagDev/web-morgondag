@@ -1,0 +1,67 @@
+.isFullscreen header
+	height 100%
+.canvas
+	position: absolute;
+	background white
+	height: 100%;
+	width: 100%;
+	transform: translate3d(0,0,0);
+header
+	width 100%
+	height 75%
+	background white
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	transform: translate3d(0,0,0);
+	.toggle
+		width 20px
+		height 20px
+		border solid 5px black
+		position absolute
+		right 0
+		top 0
+		margin 10px
+		r()
+		cursor pointer
+		transition all linear 150ms
+	.off:hover,.off:active
+		width 20px
+		height 20px
+		border solid 5px black
+		background black
+
+	.logo
+		position absolute
+		max-width 450px
+		min-width 200px
+		width 20%
+		top 0
+		left 0
+		right 0
+		bottom 0
+		height: 500px;
+		margin 0 auto
+		background url(../svg/logo.svg) center center no-repeat
+		background-size contain
+
+	.slogan
+		left: 0;
+		right: 0;
+		text-align content
+		text-transform capitalize
+		font-family: 'OpenSansSemibold';
+		font-size 14px
+		text-align center
+		top: 380px;
+		position absolute
+		transition all linear 150ms
+
+.subpage
+	padding-top 0px;
+	header
+		height 25%
+		position relative
+	.slogan
+		-webkit-animation none
+		top 80%

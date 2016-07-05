@@ -1,0 +1,593 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+@font-face {
+  font-family: 'satelliteregular';
+  src: url("../fonts/satellite-webfont.eot");
+  src: url("../fonts/satellite-webfont.eot?#iefix") format('embedded-opentype'), url("../fonts/satellite-webfont.woff") format('woff'), url("../fonts/satellite-webfont.ttf") format('truetype'), url("../fonts/satellite-webfont.svg#satelliteregular") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSansLight';
+  src: url("../fonts/OpenSans-Light-webfont.eot");
+  src: url("../fonts/OpenSans-Light-webfont.eot?#iefix") format('embedded-opentype'), url("../fonts/OpenSans-Light-webfont.woff") format('woff'), url("../fonts/OpenSans-Light-webfont.ttf") format('truetype'), url("../fonts/OpenSans-Light-webfont.svg#OpenSansLight") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSansRegular';
+  src: url("../fonts/OpenSans-Regular-webfont.eot");
+  src: url("../fonts/OpenSans-Regular-webfont.eot?#iefix") format('embedded-opentype'), url("../fonts/OpenSans-Regular-webfont.woff") format('woff'), url("../fonts/OpenSans-Regular-webfont.ttf") format('truetype'), url("../fonts/OpenSans-Regular-webfont.svg#OpenSansRegular") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSansSemibold';
+  src: url("../fonts/OpenSans-Semibold-webfont.eot");
+  src: url("../fonts/OpenSans-Semibold-webfont.eot?#iefix") format('embedded-opentype'), url("../fonts/OpenSans-Semibold-webfont.woff") format('woff'), url("../fonts/OpenSans-Semibold-webfont.ttf") format('truetype'), url("../fonts/OpenSans-Semibold-webfont.svg#OpenSansSemibold") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@-moz-keyframes colorfade {
+  0% {
+    color: #4b4d4a;
+  }
+
+  50% {
+    color: #9c9e9a;
+  }
+
+  100% {
+    color: #4b4d4a;
+  }
+}
+@-webkit-keyframes colorfade {
+  0% {
+    color: #4b4d4a;
+  }
+
+  50% {
+    color: #9c9e9a;
+  }
+
+  100% {
+    color: #4b4d4a;
+  }
+}
+@-o-keyframes colorfade {
+  0% {
+    color: #4b4d4a;
+  }
+
+  50% {
+    color: #9c9e9a;
+  }
+
+  100% {
+    color: #4b4d4a;
+  }
+}
+@-ms-keyframes colorfade {
+  0% {
+    color: #4b4d4a;
+  }
+
+  50% {
+    color: #9c9e9a;
+  }
+
+  100% {
+    color: #4b4d4a;
+  }
+}
+@keyframes colorfade {
+  0% {
+    color: #4b4d4a;
+  }
+
+  50% {
+    color: #9c9e9a;
+  }
+
+  100% {
+    color: #4b4d4a;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: 'OpenSansRegular';
+  color: #4b4d4a;
+  font-size: 16px;
+  padding-top: 35em;
+}
+.isFullscreen {
+  overflow: scroll;
+  overflow-x: auto;
+}
+section {
+  padding: 10px 1em;
+  width: 60%;
+  margin: 10px auto;
+}
+section.main {
+  position: relative;
+  z-index: 5;
+  background: #fff;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border-top: solid 1px #f1f2f1;
+}
+.loading {
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  display: block;
+  background: #4b4d4a;
+  border-radius: 2px;
+}
+.clearfix {
+  clear: both;
+}
+.left,
+.right {
+  width: 50%;
+  float: left;
+}
+a,
+a:link,
+a:visited {
+  color: #4b4d4a;
+  text-decoration: underline;
+}
+a:hover,
+a:link:hover,
+a:visited:hover,
+a:active,
+a:link:active,
+a:visited:active {
+  text-decoration: none;
+}
+h1,
+h2,
+h3 {
+  font-family: 'OpenSansSemibold';
+}
+h2 {
+  font-size: 22px;
+  margin-bottom: 22px;
+}
+.hidden {
+  visibility: hidden;
+}
+.isFullscreen header {
+  height: 100%;
+}
+.canvas {
+  position: absolute;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+}
+header {
+  width: 100%;
+  height: 75%;
+  background: #fff;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+}
+header .toggle {
+  width: 20px;
+  height: 20px;
+  border: solid 5px #4b4d4a;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all linear 150ms;
+}
+header .off:hover,
+header .off:active {
+  width: 20px;
+  height: 20px;
+  border: solid 5px #4b4d4a;
+  background: #4b4d4a;
+}
+header .logo {
+  position: absolute;
+  max-width: 450px;
+  min-width: 200px;
+  width: 20%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80%;
+  margin: 0 auto;
+  background: url("../svg/logo.svg") center center no-repeat;
+  background-size: contain;
+}
+header .slogan {
+  left: 0;
+  right: 0;
+  text-align: content;
+  text-transform: capitalize;
+  font-family: 'OpenSansSemibold';
+  font-size: 14px;
+  text-align: center;
+  top: 60%;
+  position: absolute;
+  transition: all linear 150ms;
+}
+.subpage {
+  padding-top: 0px;
+}
+.subpage header {
+  height: 25%;
+  position: relative;
+}
+.subpage .slogan {
+  -webkit-animation: none;
+  top: 80%;
+}
+.news .twitter.morgondag,
+.news .twitter.rymdresa {
+  text-align: center;
+  max-width: 80%;
+  margin: 0 auto 80px auto;
+}
+.news .twitter.morgondag .content,
+.news .twitter.rymdresa .content {
+  display: block;
+  font-size: 26px;
+  line-height: 36px;
+  margin-bottom: 16px;
+}
+.news .twitter.morgondag time,
+.news .twitter.rymdresa time,
+.news .twitter.morgondag .name,
+.news .twitter.rymdresa .name {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 16px;
+  color: #9c9e9a;
+}
+.news .twitter.morgondag time,
+.news .twitter.rymdresa time {
+  padding: 0 5px 0 0;
+}
+.news .twitter.rymdresa {
+  margin: 80px auto 80px auto;
+}
+.news .signup input {
+  font-size: 18px;
+  border: solid 1px #4b4d4a;
+  margin: 0 5px;
+  background: #fff;
+  padding: 5px 10px;
+}
+.news .signup .tack {
+  margin: 10px;
+}
+.mailchimp {
+  margin: 20px auto;
+}
+.mailchimp .title {
+  text-decoration: none;
+}
+.mailchimp ul {
+  list-style: none;
+}
+.mailchimp ul li {
+  margin-bottom: 20px;
+}
+.mailchimp h3 {
+  margin: 0px 0 10px 0;
+  display: inline-block;
+  font-size: 18px;
+}
+.mailchimp h4 {
+  font-size: 12px;
+  color: #4b4d4a;
+  color: #9c9e9a;
+  margin: 0 0 5px 0;
+}
+.mailchimp p {
+  margin-bottom: 10px;
+  line-height: 24px;
+  max-width: 720px;
+}
+.mailchimp .more {
+  display: inline-block;
+  color: #9c9e9a;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+.terminal-news {
+  font-size: 16px;
+  font-family: monospace;
+  border-top: solid 1px #d7d9d7;
+  border-bottom: solid 1px #d7d9d7;
+  padding: 25px 20px 20px 20px;
+  position: relative;
+  text-align: left;
+  text-align: left;
+/*
+	&:before
+		font-family: monospace;
+		content: "{";
+		position absolute
+		z-index 999
+		top 50%
+		left 0
+		margin -12% 0 0 -25px
+		font-size 120px
+		color lighten(black, 45%)
+	&:after
+		font-family: monospace;
+		color lighten(black, 45%)
+		content: "}";
+		position absolute
+		z-index 999
+		right 0
+		top 50%
+		margin -12% -25px 0 0
+		font-size 120px
+	*/
+}
+.terminal-news h4 {
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+.terminal-news ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.terminal-news .bash {
+  color: #9c9e9a;
+}
+.terminal-news em {
+  font-weight: bold;
+  display: block;
+  margin: 0 0 5px 0;
+}
+.terminal-news p {
+  display: block;
+  margin: 0 0 15px 0;
+  line-height: 20px;
+}
+.pixelart {
+  text-align: center;
+  width: 80%;
+}
+.pixelart ul {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+.pixelart li {
+  display: inline-block;
+  width: 250px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+  border: solid 2px #fff;
+}
+.pixelart li a,
+.pixelart li img {
+  display: block;
+  position: absolute;
+  left: -50%;
+  margin: 0 0 0 75px;
+  width: 150%;
+  height: auto;
+}
+.team .team-pic {
+  background: url("../svg/team.svg") center center no-repeat;
+  width: 100%;
+  height: 380px;
+  background-size: contain;
+  margin: 2em auto;
+}
+.team .hello {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.team .left {
+  padding-right: 50px;
+}
+.team .right {
+  padding-left: 50px;
+}
+.instagram ul {
+  text-align: center;
+}
+.instagram ul li {
+  display: inline-block;
+  width: 200px;
+  opacity: 0.9;
+  border: solid 2px #fff;
+  vertical-align: middle;
+}
+.instagram ul li:hover,
+.instagram ul li:active {
+  opacity: 1;
+}
+.instagram ul li img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.newletter {
+  max-width: 850px;
+}
+.newletter span,
+.newletter p {
+  font-size: 16px !important;
+}
+.newletter h1 {
+  margin-bottom: 10px !important;
+}
+.newletter .mcnTextContentContainer {
+  border: none !important;
+}
+.newletter .mcnDividerBlockInner {
+  display: none;
+}
+.newletter img.mcnImage {
+  max-width: 100% !important;
+  display: block !important;
+}
+.social {
+  text-align: center;
+}
+.social ul li {
+  display: inline-block;
+  margin: 10px;
+}
+.social ul li a {
+  display: block;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+.social ul li a:hover,
+.social ul li a:active {
+  text-decoration: underline;
+}

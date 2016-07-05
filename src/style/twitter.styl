@@ -1,0 +1,31 @@
+.twitter
+	margin 4em auto
+	color lighten(black, 20)
+	line-height: 26px;
+	max-width: 495px;
+	font-size 15px
+	a
+		color lighten(black, 20)
+		text-decoration none;
+		&:hover
+			text-decoration underline
+	a.from
+		display inline-block
+		color lighten(black, 40)
+		margin: 0 0 5px 10px;
+	time
+		display inline-block
+		color lighten(black, 40)
+		margin: 0 0 5px -20px;
+	img
+		float: left;
+		margin: 5px 14px 0 -18px;
+	.profile
+		display block
+		transition 150ms linear
+		img
+			border solid 1px white
+		&:hover img
+			border solid 1px lighten(black, 20%)
+	.tweet
+		min-height: 80px;

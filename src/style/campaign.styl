@@ -1,0 +1,56 @@
+.timebar
+	width: 250px;
+	height: 12px;
+	background-color: white;
+	margin: -55px auto 0 auto;
+	position relative;
+	border 1px solid bc
+
+	.time
+		background-color: darken(bc,50%)
+		height: 11px;
+
+
+for num in (0..100)
+	if num > 0
+		.time[data-percentage={'"'+num+'"'}]
+			width: unit(num, '%')
+	else
+		.time[data-percentage={'"'+num+'"'}]
+			width: 0%;
+
+.thumbs
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
+	margin: -77px 0 72px 0
+	transform: translate3d(0,0,0);
+	li
+		transform: translate3d(0,0,0);
+		width: 180px;
+		height: 140px;
+		border 1px solid bc
+		display: inline-block;
+		margin: 0 15px;
+		background white
+		cursor pointer
+		transition all linear 150ms
+		background-size: cover;
+		background-repeat no-repeat;
+		background-position center center
+		&:hover
+			border 1px solid darken(bc,50%)
+
+	li.nr1
+		//background white url(../img/logo.png) center center no-repeat
+		background-size: contain;
+	li.nr2
+		//background white url(../img/rymdresa.gif) center center no-repeat
+	li.nr3
+		background-image none
+	li.nr4
+		background-image none
+	li.active
+		transform: scale(1.1);
