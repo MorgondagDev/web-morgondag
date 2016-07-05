@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import moment from 'moment'
 
+import Twitter from './twitter.jsx'
+
 export default class extends React.Component {
 	constructor(props) {
 		super(props)
@@ -62,6 +64,11 @@ export default class extends React.Component {
 		} else {
 			return(
 				<section>
+
+           {this.state.twitter.map((post) => {
+              return ( <Twitter key={post.id} data={post}/> )
+           })}
+
            {this.state.instagram.map((post) => {
               return (
                   <li key={post.id}>
@@ -72,18 +79,6 @@ export default class extends React.Component {
                   </li>
               )
            })}
-
-           {this.state.twitter.map((post) => {
-              return (
-                  <li key={post.id}>
-
-                    <a href={post.url} title={post.name}> {moment(new Date(post.created_at)).fromNow()}: @{post.name}</a>
-                    <img src={post.img} alt={post.name}/>
-                    <div dangerouslySetInnerHTML={{__html: post.tweet}} />
-                  </li>
-              )
-           })}
-
 
            {this.state.medium.map((post) => {
               return (

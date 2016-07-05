@@ -19,6 +19,7 @@ export default class extends React.Component {
 					</div>
 				</header>
 				<section className="main">
+					<News/>
 					<div className="steam">
 						<iframe src="http://store.steampowered.com/widget/269690/" frameborder="0" width="100%" height="190"></iframe>
 					</div>
