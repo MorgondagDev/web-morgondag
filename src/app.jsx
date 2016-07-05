@@ -4,12 +4,15 @@ import ReactDOM from 'react-dom'
 import News from './components/news.jsx'
 
 export default class extends React.Component {
+
 	constructor(props) {
 		super(props)
 	}
+
 	componentDidMount(){
 
 	}
+
 	render(){
 		return(
 			<containter>
@@ -21,7 +24,7 @@ export default class extends React.Component {
 				<section className="main">
 					<News/>
 					<div className="steam">
-						<iframe src="http://store.steampowered.com/widget/269690/" frameborder="0" width="100%" height="190"></iframe>
+						<iframe src="http://store.steampowered.com/widget/269690/" frameBorder="0" width="100%" height="190"></iframe>
 					</div>
 				</section>
 			</containter>
