@@ -10,7 +10,7 @@ module.exports = {
     'webpack-dev-server/client?http://localhost:' + PORT,
     'webpack/hot/only-dev-server',
     './src/index.jsx',
-    './src/style.styl'
+    './src/style/style.styl'
   ],
   module: {
     preLoaders: [{
