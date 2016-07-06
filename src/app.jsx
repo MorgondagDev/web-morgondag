@@ -33,28 +33,12 @@ export default class extends React.Component {
 			this.setState({
 				medium: json.medium.slice(0,4),
 				twitter: json.twitter,
-				instagram: json.instagram
+				instagram: json.instagram,
+				news: json.news
 			})
 		}).catch((ex) => {
 			console.log(ex)
 		})
-
-		fetch('http://static.morgondag.nu/news.json', {
-			method: 'get',
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			},
-			cors: true
-		})
-		.then((res) => {
-			return res.json()
-		}).then((json) => {
-			 this.setState({news: json.slice(0,4)})
-		}).catch((ex) => {
-			console.log(ex)
-		})
-
 	}
 
 	renderMorgondagTwitter(){
@@ -88,7 +72,6 @@ export default class extends React.Component {
 	}
 
 	renderInstagram(){
-
 		if(this.state.instagram){
 			return(
 				<ul className="instagram">
@@ -201,15 +184,6 @@ export default class extends React.Component {
 						<iframe src="http://store.steampowered.com/widget/269690/" frameBorder="0" width="100%" height="190"></iframe>
 					</div>
 					 {this.renderInstagram()}
-
-
-
-
-
-
-
-
-
 				<section className="social">
 					<h2>Follow us!</h2>
 					<ul>
