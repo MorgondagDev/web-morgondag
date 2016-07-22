@@ -2,9 +2,18 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import moment from 'moment'
 
-import News from './components/news.jsx'
-import TwitterMorgondag from './components/twitter_morgondag.jsx'
+import 'whatwg-fetch';
+import {Promise} from 'es6-promise'
+
 import Twitter from './components/twitter.jsx'
+
+const ctas = [
+	'news',
+	'early access',
+	'beta invites',
+	'giveaways',
+	'devlog'
+]
 
 export default class extends React.Component {
 
@@ -14,8 +23,29 @@ export default class extends React.Component {
 			medium: props.medium,
 			twitter:props.twitter,
 			instagram:props.instagram,
-			news: props.news
+			news: props.news,
+			cta:0,
+			ctaText:'Signup'
 		}
+	}
+
+
+	rotateCTA() {
+		setTimeout(() => {
+			this.rotateCTA();
+		}, 2500);
+
+
+		let current = this.state.cta += 1;
+
+		if(current > ctas.length-1){
+			current = 0
+		}
+
+		this.setState({
+			cta:current,
+			ctaText: ctas[current]
+		})
 	}
 
 	componentDidMount(){
@@ -31,7 +61,7 @@ export default class extends React.Component {
 			return res.json()
 		}).then((json) => {
 			this.setState({
-				medium: json.medium.slice(0,4),
+				medium: json.medium,
 				twitter: json.twitter,
 				instagram: json.instagram,
 				news: json.news
@@ -39,35 +69,37 @@ export default class extends React.Component {
 		}).catch((ex) => {
 			console.log(ex)
 		})
+
+		this.rotateCTA()
 	}
 
 	renderMorgondagTwitter(){
 		if(this.state.twitter){
-			return (<TwitterMorgondag className="twitter_morgondag" data={this.state.twitter[2]}/>)
+			return (<Twitter className="twitter_morgondag" showProfile={false} data={this.state.twitter[2]}/>)
 		}
 	}
 
 	renderRymdResaTwitter(){
 		if(this.state.twitter){
-			return (<Twitter data={this.state.twitter[0]}/>)
+			return (<Twitter showProfile={true} data={this.state.twitter[0]}/>)
 		}
 	}
 
 	renderImprintTwitter(){
 		if(this.state.twitter){
-			return (<Twitter data={this.state.twitter[1]}/>)
+			return (<Twitter showProfile={true} data={this.state.twitter[1]}/>)
 		}
 	}
 
 	renderVendelaTwitter(){
 		if(this.state.twitter){
-			return (<Twitter data={this.state.twitter[3]}/>)
+			return (<Twitter showProfile={true} data={this.state.twitter[3]}/>)
 		}
 	}
 
 	renderKimTwitter(){
 		if(this.state.twitter){
-			return (<Twitter data={this.state.twitter[4]}/>)
+			return (<Twitter showProfile={true} data={this.state.twitter[4]}/>)
 		}
 	}
 
@@ -138,53 +170,73 @@ export default class extends React.Component {
 				<header>
 					<div className="logo"></div>
 					{this.renderMorgondagTwitter()}
+					<div className="center">
+						<a href="http://morgondag.us3.list-manage2.com/subscribe?u=0c6b4fd7d0dc95e81024c3c51&id=970ded45b7" className="btn">Signup for {this.state.ctaText}!</a>
+					</div>
 				</header>
 				<section className="main">
-					<ul className="games">
+					<ul className="column-cards">
 						<li>
-							<a href="#">x</a>
+							<a href="https://imprint-x.com" className="game-card imprintx" title="imprint-X"></a>
+							<a href="https://imprint-x.com" title="imprint-X"><h2>imprint-X</h2></a>
 						</li>
 						<li>
-							<a href="#">x</a>
+							<a href="http://rymdresa.com" className="game-card rymdresa" title="RymdResa"></a>
+							<a href="http://rymdresa.com" title="RymdResa"><h2>RymdResa</h2></a>
 						</li>
 					</ul>
 
 					<div className="columns">
 						<div className="left">
-							{this.renderRymdResaTwitter()}
+							{this.renderImprintTwitter()}
 							{this.renderNews()}
 						</div>
 						<div className="right">
-							{this.renderImprintTwitter()}
+							{this.renderRymdResaTwitter()}
 							{this.renderMedium()}
 						</div>
 						<div className="clearfix"></div>
 					</div>
 
-
-					<section>
+					<section className="team-info">
 						<h2>We are digital creatives</h2>
 						<p>Together as a couple we design, develop and create digital experiences, games, apps, sites and art.</p>
-						<p>We are located in Sweden, Stockholm! Support us on Patreon.</p>
 					</section>
 
 					<div className="columns team">
 						<div className="left">
 							<h3>Vendela Carberg Larsson</h3>
+							<p><a href="mailto:vendela@morgondag.nu" title="Send a mail to Vendela">Mail</a></p>
+							<p><a href="http://twitter.com/vemdel" title="Talk to Vendela on Twitter">Twitter</a></p>
+							<p><a href="http://vendela-carlberg-larsson.com/" title="Visit Vendela Carlberg Larsson">Site</a></p>
 							{this.renderVendelaTwitter()}
 						</div>
 						<div className="right">
 							<h3>Kim Aarnseth</h3>
+							<p><a href="mailto:kim@morgondag.nu" title="send an email to Kim Aarnseth">Mail</a></p>
+							<p><a href="http://twitter.com/Kim_aarnseth" title="Reach out to Kim on Twitter">Twitter</a></p>
+							<p><a href="http://kimaarnseth.com/" title="Visit Kim Aarnseth homepage">Site</a></p>
 							{this.renderKimTwitter()}
 						</div>
 						<div className="clearfix"></div>
 					</div>
 
+
 					<div className="steam">
 						<iframe src="http://store.steampowered.com/widget/269690/" frameBorder="0" width="100%" height="190"></iframe>
 					</div>
+
 					 {this.renderInstagram()}
+
+
+				<section>
+					<div className="center">
+						<a href="http://morgondag.us3.list-manage2.com/subscribe?u=0c6b4fd7d0dc95e81024c3c51&id=970ded45b7" className="btn">Signup for {this.state.ctaText}!</a>
+					</div>
+				</section>
+
 				<section className="social">
+
 					<h2>Follow us!</h2>
 					<ul>
 						<li>
