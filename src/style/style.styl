@@ -49,6 +49,11 @@
 	.column-cards li
 		height: 300px;
 
+	.cards li
+		width 80%
+		float none
+
+
 @media (max-width: 960px)
 	.team
 		width 90%
@@ -83,13 +88,22 @@
 	.column-cards
 		display block
 		text-align: center;
+		margin-bottom 0px;
 		li
 			width 80%
 			max-width 100%
 			margin 0 auto
 			padding 0
 			height: 300px
-			margin-bottom: 65px;
+			margin-bottom: 85px;
+	.cards li
+		width 100%
+		float none
+	.column-cards li
+		position relative
+	.playBtn
+		position absolute
+		top 0
 
 @media (max-width: 600px)
 	.left, .right
@@ -153,6 +167,8 @@
 @media (max-width: 475px)
 	.twitter_morgondag
 		display none
+	body
+		padding-top 300px
 @media (max-width: 418px)
 	section.main
 		margin-top: -75px;
@@ -174,6 +190,8 @@
 		height: 175px;
 		width: 100%;
 @media (max-width: 348px)
+	body
+		padding-top 380px
 	section.main
 		margin-top: -176px;
 		padding-bottom: 2px;

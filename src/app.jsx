@@ -164,11 +164,11 @@ export default class extends React.Component {
 		}
 	}
 
-	renderNews(sliceFrom,sliceTo){
+	renderNews(){
 		if(this.state.news){
 			return (
 				<ul className="cards">
-					{this.state.news.slice(sliceFrom,sliceTo).map((post) => {
+					{this.state.news.map((post) => {
 						return <li key={post.id}>
 						<a target="_blank" title={post.title} href={post.url}><img width="200" src={post.image_url} alt={post.title}/>
 							<div className="meta">
@@ -214,35 +214,38 @@ export default class extends React.Component {
 				<header>
 					<div className="logo"></div>
 					{this.renderMorgondagTwitter()}
-					<div className="center">
-						<a href="http://morgondag.us3.list-manage2.com/subscribe?u=0c6b4fd7d0dc95e81024c3c51&id=970ded45b7" className="btn">Signup for {this.state.ctaText}!</a>
-					</div>
 				</header>
 				<section className="main">
+
 					<ul className="column-cards">
 						<li>
 							<a href="https://imprint-x.com" className="game-card imprintx" title="imprint-X"></a>
 							<a href="https://imprint-x.com" title="imprint-X"><h2>imprint-X</h2></a>
+							<a href="https://imprint-x.com/" className="btn playBtn" title="Play imprint-X">► imprint-X</a>
 						</li>
 						<li>
 							<a href="http://rymdresa.com" className="game-card rymdresa" title="RymdResa"></a>
 							<a href="http://rymdresa.com" title="RymdResa"><h2>RymdResa</h2></a>
+							<a href="https://imprint-x.com/" className="btn playBtn purple" title="Play RymdResa">► RymdResa</a>
 						</li>
 					</ul>
+
+
 
 					<div className="columns">
 						<div className="left">
 							{this.renderImprintTwitter()}
-							{this.renderNews(0,4)}
 						</div>
 						<div className="right">
 							{this.renderRymdResaTwitter()}
-							{this.renderNews(4,8)}
 						</div>
 						<div className="clearfix"></div>
 					</div>
 
-
+					<div className="columns">
+						{this.renderNews()}
+						<div className="clearfix"></div>
+					</div>
 
 					<section>
 						{this.renderArchive()}
