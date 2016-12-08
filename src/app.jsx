@@ -15,18 +15,25 @@ const ctas = [
 	'devlog'
 ]
 
+let archiveCount = 0;
+
+
 export default class extends React.Component {
 
 	constructor(props) {
 		super(props)
 		this.state = {
-			medium: props.medium,
+			//medium: props.medium,
 			twitter:props.twitter,
 			instagram:props.instagram,
 			news: props.news,
+			archive: props.archive,
 			cta:0,
-			ctaText:'Signup'
+			ctaText:'Signup',
+			t: Date.now()
 		}
+
+		this.incrementArchive = this.incrementArchive.bind(this);
 	}
 
 
@@ -61,10 +68,11 @@ export default class extends React.Component {
 			return res.json()
 		}).then((json) => {
 			this.setState({
-				medium: json.medium,
+				//medium: json.medium,
 				twitter: json.twitter,
 				instagram: json.instagram,
-				news: json.news
+				news: json.news,
+				archive: json.archive
 			})
 		}).catch((ex) => {
 			console.log(ex)
@@ -103,6 +111,40 @@ export default class extends React.Component {
 		}
 	}
 
+	incrementArchive(c){
+		archiveCount += 1;
+		this.setState({t: Date.now()})
+
+	}
+
+	renderArchive(){
+		if(this.state.archive){
+			let moreBtn = ""
+			if(archiveCount < this.state.archive.length){
+				let left = this.state.archive.length-archiveCount;
+
+				moreBtn = <li class="more"><div className="btn" onClick={this.incrementArchive}>Show More ({left})</div></li>;
+			}
+
+			return(
+				<ul className="list">
+					{this.state.archive.slice(0,archiveCount).map((post) => {
+						return <li key={post.id}>
+							<div className="meta">
+								<a target="_blank" title={post.title} href={post.url}>
+									<h3>{post.title}</h3>
+									<p>{moment(post.date).format('MMMM DD, YYYY')}</p>
+								</a>
+								<p>{post.description}</p>
+							</div>
+						</li>
+					})}
+					{moreBtn}
+				</ul>
+			)
+		}
+	}
+
 	renderInstagram(){
 		if(this.state.instagram){
 			return(
@@ -122,11 +164,11 @@ export default class extends React.Component {
 		}
 	}
 
-	renderNews(){
+	renderNews(sliceFrom,sliceTo){
 		if(this.state.news){
 			return (
 				<ul className="cards">
-					{this.state.news.map((post) => {
+					{this.state.news.slice(sliceFrom,sliceTo).map((post) => {
 						return <li key={post.id}>
 						<a target="_blank" title={post.title} href={post.url}><img width="200" src={post.image_url} alt={post.title}/>
 							<div className="meta">
@@ -142,6 +184,7 @@ export default class extends React.Component {
 		}
 	}
 
+	/*
 	renderMedium(){
 		if(this.state.medium){
 			return(
@@ -163,6 +206,7 @@ export default class extends React.Component {
 			)
 		}
 	}
+	*/
 
 	render(){
 		return(
@@ -189,14 +233,21 @@ export default class extends React.Component {
 					<div className="columns">
 						<div className="left">
 							{this.renderImprintTwitter()}
-							{this.renderNews()}
+							{this.renderNews(0,4)}
 						</div>
 						<div className="right">
 							{this.renderRymdResaTwitter()}
-							{this.renderMedium()}
+							{this.renderNews(4,8)}
 						</div>
 						<div className="clearfix"></div>
 					</div>
+
+
+
+					<section>
+						{this.renderArchive()}
+					</section>
+
 
 					<section className="team-info">
 						<h2>We are digital creatives</h2>
@@ -221,6 +272,9 @@ export default class extends React.Component {
 						<div className="clearfix"></div>
 					</div>
 
+					<div className="steam">
+						<iframe src="http://store.steampowered.com/widget/434310/" frameBorder="0" width="100%" height="190"></iframe>
+					</div>
 
 					<div className="steam">
 						<iframe src="http://store.steampowered.com/widget/269690/" frameBorder="0" width="100%" height="190"></iframe>
