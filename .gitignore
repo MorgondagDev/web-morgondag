@@ -41,3 +41,5 @@ dist/style.min.css
 dist/*.svg
 dist/public
 dist/fonts/
+*.sublime-workspace
+web-morgondag.sublime-project
