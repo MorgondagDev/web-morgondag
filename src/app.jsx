@@ -297,7 +297,7 @@ export default class extends React.Component {
 					<h2>Follow us!</h2>
 					<ul>
 						<li>
-							<a href="https://www.facebook.com/morgondagdev" title="Morgondag on Twitter">twitter</a>
+							<a href="https://twitter.com/morgondagdev" title="Morgondag on Twitter">twitter</a>
 						</li>
 						<li>
 							<a href="https://www.facebook.com/Morgondag" title="Morgondag on Facebook">facebook</a>
