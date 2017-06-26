@@ -22,6 +22,9 @@
 @import team
 @import develop
 @import campaign
+@import signup
+
+
 
 .tweet
 	padding: 0 0 0 85px;
@@ -33,9 +36,9 @@
 		top: 330px;
 	.instagram
 		width 100%;
-	section.main
-		margin-top: -100px
 @media (max-width: 1200px)
+	body
+		padding-top 18em
 	.news
 		width: 80%
 	.twitter
@@ -62,10 +65,12 @@
 @media (max-width: 800px)
 	.news
 		width: 100%
-	header .logo
-		height 200px
 	.column-cards li
 		height 200px
+	body
+		padding-top 12em
+	header .logo
+		height: 200px
 @media (max-width: 700px)
 	.mailchimp .img-container
 		margin 3px 10px 10px 5px
@@ -82,7 +87,7 @@
 	.mailchimp .more
 		margin: 0 0 15px 115px;
 
-@media (max-width: 640px)
+@media (max-width: 780px)
 	.column-cards li
 		height: 200px;
 	.column-cards
@@ -104,7 +109,10 @@
 	.playBtn
 		position absolute
 		top 0
-
+	.signup p.msg
+		font-size 1em
+		max-width: 500px;
+		padding 0 10px
 @media (max-width: 600px)
 	.left, .right
 		width 100%
@@ -168,10 +176,11 @@
 	.twitter_morgondag
 		display none
 	body
-		padding-top 300px
+		padding-top 200px
+
 @media (max-width: 418px)
 	section.main
-		margin-top: -75px;
+		margin-top: 0px;
 	.news .signup input
 		margin: 1em auto;
 		display: block;
@@ -191,9 +200,8 @@
 		width: 100%;
 @media (max-width: 348px)
 	body
-		padding-top 380px
+		padding-top 200px
 	section.main
-		margin-top: -176px;
 		padding-bottom: 2px;
 	.thumbs li
 		width 100px

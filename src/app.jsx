@@ -8,11 +8,11 @@ import {Promise} from 'es6-promise'
 import Twitter from './components/twitter.jsx'
 
 const ctas = [
-	'news',
-	'early access',
-	'beta invites',
-	'giveaways',
-	'devlog'
+	'Signup!',
+	'Send',
+	'Get the info!',
+	'Add your email!',
+	'Feel the love!'
 ]
 
 let archiveCount = 0;
@@ -83,7 +83,7 @@ export default class extends React.Component {
 
 	renderMorgondagTwitter(){
 		if(this.state.twitter){
-			return (<Twitter className="twitter_morgondag" showProfile={false} data={this.state.twitter[2]}/>)
+			return (<Twitter showProfile={true} data={this.state.twitter[2]}/>)
 		}
 	}
 
@@ -208,16 +208,39 @@ export default class extends React.Component {
 	}
 	*/
 
+	renderSignup(){
+		return(<section className="signup">
+			<div className="center">
+				<h1> {'<3'} </h1>
+				<p className="msg">Fill in your email below and we will send you our finest breadcrumbs in form of secrets, offers and most importantly updates and awesome news about our next playable universe!</p>
+			      <form action="http://send.morgondag.nu/subscribe" method="POST" acceptCharset="utf-8">
+			        <input type="email" name="email" id="email" placeholder="fantastic@mail.com" />
+			        <br />
+			        <input type="hidden" name="list" defaultValue="XgSgS5WieFsaj5aMSyZoKQ" />
+			        <input type="submit" name="submit" id="submit" value={this.state.ctaText} />
+			        <p><em>(PS. Right now it will mostly be about Lunar Soil.)</em></p>
+			      </form>
+			</div>
+		</section>)
+	}
+
 	render(){
 		return(
 			<containter>
 				<header>
 					<div className="logo"></div>
-					{this.renderMorgondagTwitter()}
+
 				</header>
 				<section className="main">
 
+					{this.renderSignup()}
+
 					<ul className="column-cards">
+						<li>
+							<a href="https://lunar-soil.com" className="game-card lunarsoil" title="Lunar Soil"></a>
+							<a href="https://lunar-soil.com" title="Lunar Soil"><h2>Lunar Soil</h2></a>
+							<a href="https://lunar-soil.com/" className="btn playBtn yellow" title="Play Lunar Soil">► Lunar Soil</a>
+						</li>
 						<li>
 							<a href="https://imprint-x.com" className="game-card imprintx" title="imprint-X"></a>
 							<a href="https://imprint-x.com" title="imprint-X"><h2>imprint-X</h2></a>
@@ -230,50 +253,40 @@ export default class extends React.Component {
 						</li>
 					</ul>
 
-
-
 					<div className="columns">
 						<div className="left">
-							{this.renderImprintTwitter()}
+
 						</div>
 						<div className="right">
-							{this.renderRymdResaTwitter()}
+
 						</div>
 						<div className="clearfix"></div>
 					</div>
 
 					<div className="columns">
-						{this.renderNews()}
+						{/*this.renderNews()*/}
 						<div className="clearfix"></div>
 					</div>
 
 					<section>
-						{this.renderArchive()}
+						{/*this.renderArchive() */}
 					</section>
 
 
 					<section className="team-info">
-						<h2>We are digital creatives</h2>
-						<p>Together as a couple we design, develop and create digital experiences, games, apps, sites and art.</p>
+						<h2>A two person game studio!</h2>
+						<h3>We are <a href="http://twitter.com/vemdel" title="Vendela on Twitter">Vendela</a> and <a href="http://twitter.com/Kim_aarnseth" title="Kim on Twitter">Kim.</a></h3>
+						<p>Together as a couple we design, develop and create amazing games filled with story and atmosphere.</p>
+						<p>We have previously released <a href="http://rymdresa.com" title="RymdResa">RymdResa</a> and <a href="https://imprint-x.com" title="imprint-X">imprint-X</a>.
+						 We are currently working on our next game <a href="https://lunar-soil.com" title="Lunar Soil">Lunar Soil</a>.
+						</p>
+						<p><br/></p>
+						<p>Send over <a href="mailto:vendela@morgondag.nu" title="Send a mail to Vendela">mail</a> if you got any questsions!</p>
 					</section>
 
-					<div className="columns team">
-						<div className="left">
-							<h3>Vendela Carberg Larsson</h3>
-							<p><a href="mailto:vendela@morgondag.nu" title="Send a mail to Vendela">Mail</a></p>
-							<p><a href="http://twitter.com/vemdel" title="Talk to Vendela on Twitter">Twitter</a></p>
-							<p><a href="http://vendela-carlberg-larsson.com/" title="Visit Vendela Carlberg Larsson">Site</a></p>
-							{this.renderVendelaTwitter()}
-						</div>
-						<div className="right">
-							<h3>Kim Aarnseth</h3>
-							<p><a href="mailto:kim@morgondag.nu" title="send an email to Kim Aarnseth">Mail</a></p>
-							<p><a href="http://twitter.com/Kim_aarnseth" title="Reach out to Kim on Twitter">Twitter</a></p>
-							<p><a href="http://kimaarnseth.com/" title="Visit Kim Aarnseth homepage">Site</a></p>
-							{this.renderKimTwitter()}
-						</div>
-						<div className="clearfix"></div>
-					</div>
+
+					{this.renderMorgondagTwitter()}
+
 
 					<div className="steam">
 						<iframe src="http://store.steampowered.com/widget/434310/" frameBorder="0" width="100%" height="190"></iframe>
@@ -283,14 +296,14 @@ export default class extends React.Component {
 						<iframe src="http://store.steampowered.com/widget/269690/" frameBorder="0" width="100%" height="190"></iframe>
 					</div>
 
-					 {this.renderInstagram()}
+					<section className="specialinstagrampadding">
+						<p><a href="https://instagram.com/morgondag" title="morgondag on instagram">Instagram</a></p>
+					</section>
+					{this.renderInstagram()}
 
 
-				<section>
-					<div className="center">
-						<a href="http://morgondag.us3.list-manage2.com/subscribe?u=0c6b4fd7d0dc95e81024c3c51&id=970ded45b7" className="btn">Signup for {this.state.ctaText}!</a>
-					</div>
-				</section>
+				{this.renderSignup()}
+
 
 				<section className="social">
 
@@ -311,9 +324,7 @@ export default class extends React.Component {
 						<li>
 							<a href="http://store.steampowered.com/search/?publisher=Morgondag" title="Morgondag on Steam">steam</a>
 						</li>
-						<li>
-							<a href="http://morgondag-nu.tumblr.com" title="Morgondag on Tumblr">tumblr</a>
-						</li>
+
 						<li>
 							<a href="https://www.youtube.com/channel/UCIGlLCIdHqDhUiao1LmAFoA" title="Morgondag on Youtube">Youtube</a>
 						</li>
@@ -325,9 +336,6 @@ export default class extends React.Component {
 						</li>
 						<li>
 							<a href="mailto:vendela@morgondag.nu" title="Morgondag email">email</a>
-						</li>
-						<li>
-							<a href="http://github.com/morgondagdev" title="Morgondag on Github">github</a>
 						</li>
 						<li>
 							<a href="http://vendela-carlberg-larsson.com" title="Morgondag Vendela">Vendela</a>
