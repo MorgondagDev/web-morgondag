@@ -227,6 +227,7 @@ export default class extends React.Component {
 			        </div>
 			        <br />
 			        <input type="hidden" name="list" defaultValue="XgSgS5WieFsaj5aMSyZoKQ" />
+			        <input type="hidden" name="ref" defaultValue="web-morgondag" />
 			        <input type="submit" name="submit" id="submit" value={this.state.ctaText} />
 			        <p><em>(PS. Right now it will mostly be about Lunar Soil.)</em></p>
 			      </form>
