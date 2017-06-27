@@ -214,7 +214,17 @@ export default class extends React.Component {
 				<h1> {'<3'} </h1>
 				<p className="msg">Fill in your email below and we will send you our finest breadcrumbs in form of secrets, offers and most importantly updates and awesome news about our next playable universe!</p>
 			      <form action="http://send.morgondag.nu/subscribe" method="POST" acceptCharset="utf-8">
-			        <input type="email" name="email" id="email" placeholder="fantastic@mail.com" />
+
+			      	<div className="box">
+			      		<div className="inputfield">
+			      		<label htmlFor="name">Name:</label>
+			      			<input type="text" name="name" id="name" placeholder="My amazing name" required/>
+			      		</div>
+			      		<div className="inputfield">
+			      			<label htmlFor="email">Email:</label>
+			        		<input type="email" name="email" id="email" placeholder="fantastic@mail.com" required />
+			        	</div>
+			        </div>
 			        <br />
 			        <input type="hidden" name="list" defaultValue="XgSgS5WieFsaj5aMSyZoKQ" />
 			        <input type="submit" name="submit" id="submit" value={this.state.ctaText} />
