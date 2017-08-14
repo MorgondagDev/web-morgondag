@@ -260,7 +260,7 @@ export default class extends React.Component {
 						<li>
 							<a href="http://rymdresa.com" className="game-card rymdresa" title="RymdResa"></a>
 							<a href="http://rymdresa.com" title="RymdResa"><h2>RymdResa</h2></a>
-							<a href="https://imprint-x.com/" className="btn playBtn purple" title="Play RymdResa">► RymdResa</a>
+							<a href="http://rymdresa.com" className="btn playBtn purple" title="Play RymdResa">► RymdResa</a>
 						</li>
 					</ul>
 
