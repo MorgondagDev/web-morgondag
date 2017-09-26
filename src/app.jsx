@@ -285,19 +285,16 @@ export default class extends React.Component {
 
 
 					<section className="team-info">
-						<h2>A two person game studio!</h2>
-						<h3>We are <a href="http://twitter.com/vemdel" title="Vendela on Twitter">Vendela</a> and <a href="http://twitter.com/Kim_aarnseth" title="Kim on Twitter">Kim.</a></h3>
-						<p>Together as a couple we design, develop and create amazing games filled with story and atmosphere.</p>
-						<p>We have previously released <a href="http://rymdresa.com" title="RymdResa">RymdResa</a> and <a href="https://imprint-x.com" title="imprint-X">imprint-X</a>.
-						 We are currently working on our next game <a href="https://lunar-soil.com" title="Lunar Soil">Lunar Soil</a>.
+						<h2>Morgondag</h2>
+						<h3>A Swedish Game Studio</h3>
+						<p>We publish, design, develop and create unique games filled with our own twist, story, atmosphere and a lot of love.</p>
+						<p> We are currently working on our next game <a href="https://lunar-soil.com" title="Lunar Soil">Lunar Soil</a>.
 						</p>
 						<p><br/></p>
-						<p>Send over <a href="mailto:vendela@morgondag.nu" title="Send a mail to Vendela">mail</a> if you got any questsions!</p>
+						<p>Follow Morgondag on <a href="http://twitter.com/MorgondagDev" title="Morgondag gamedeveloper on Twitter">Twitter</a> And <a href="https://instagram.com/morgondag" title="Morgondag gamedesign on Instagram">Instagram<a/></p>
 					</section>
 
-
 					{this.renderMorgondagTwitter()}
-
 
 					<div className="steam">
 						<iframe src="http://store.steampowered.com/widget/434310/" frameBorder="0" width="100%" height="190"></iframe>
