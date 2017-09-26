@@ -291,7 +291,7 @@ export default class extends React.Component {
 						<p> We are currently working on our next game <a href="https://lunar-soil.com" title="Lunar Soil">Lunar Soil</a>.
 						</p>
 						<p><br/></p>
-						<p>Follow Morgondag on <a href="http://twitter.com/MorgondagDev" title="Morgondag gamedeveloper on Twitter">Twitter</a> And <a href="https://instagram.com/morgondag" title="Morgondag gamedesign on Instagram">Instagram</a></p>
+						<p>Follow Morgondag on <a href="http://twitter.com/MorgondagDev" title="Morgondag gamedeveloper on Twitter">Twitter</a> and <a href="https://instagram.com/morgondag" title="Morgondag gamedesign on Instagram">Instagram</a></p>
 					</section>
 
 					{this.renderMorgondagTwitter()}
