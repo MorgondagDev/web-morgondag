@@ -211,9 +211,11 @@ export default class extends React.Component {
 	onSubmit(e){
 		try {
 			var value = document.querySelector('input[name="name"]').value
-			if(value.indexOf("5a") > -1){
-				e.preventDefault();
-				location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+			if(value.length > 2){
+				if(value.substring(0, 2) == "5a" || value.substring(0, 2) == "59"){
+					e.preventDefault();
+					location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+				}
 			}
 		} catch(e){
 
