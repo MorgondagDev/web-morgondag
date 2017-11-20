@@ -208,12 +208,24 @@ export default class extends React.Component {
 	}
 	*/
 
+	onSubmit(e){
+		try {
+			var value = document.querySelector('input[name="name"]').value
+			if(value.indexOf("5a1") > -1){
+				e.preventDefault();
+				location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+			}
+		} catch(e){
+
+		}
+	}
+
 	renderSignup(){
 		return(<section className="signup">
 			<div className="center">
 				<h1> {'<3'} </h1>
 				<p className="msg">Fill in your email below and we will send you our finest breadcrumbs in form of secrets, offers and most importantly updates and awesome news about our next playable universe!</p>
-			      <form action="http://send.morgondag.nu/subscribe" method="POST" acceptCharset="utf-8">
+			      <form action="http://send.morgondag.nu/subscribe" method="POST" acceptCharset="utf-8" onSubmit={this.onSubmit}>
 
 			      	<div className="box">
 			      		<div className="inputfield">
@@ -222,7 +234,7 @@ export default class extends React.Component {
 			      		</div>
 			      		<div className="inputfield">
 			      			<label htmlFor="email">Email:</label>
-			        		<input type="email" name="email" id="email" placeholder="fantastic@mail.com" required />
+			        		<input type="email" name="email" id="email" placeholder="amazing@mail.com" required />
 			        	</div>
 			        </div>
 			        <br />
