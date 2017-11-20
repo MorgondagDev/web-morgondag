@@ -211,7 +211,7 @@ export default class extends React.Component {
 	onSubmit(e){
 		try {
 			var value = document.querySelector('input[name="name"]').value
-			if(value.indexOf("5a1") > -1){
+			if(value.indexOf("5a") > -1){
 				e.preventDefault();
 				location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 			}
