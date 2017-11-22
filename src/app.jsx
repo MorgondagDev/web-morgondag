@@ -212,7 +212,7 @@ export default class extends React.Component {
 		try {
 			var value = document.querySelector('input[name="name"]').value
 			if(value.length > 0){
-				if(value.substring(0, 2) == "5a" || value.substring(0, 2) == "59"){
+				if(value.substring(0, 2) == "5a" || value.substring(0, 2) == "59" ||  value.substring(0, 2) == "59"){
 					e.preventDefault();
 					location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
 				}
@@ -243,7 +243,7 @@ export default class extends React.Component {
 			        <input type="hidden" name="list" defaultValue="XgSgS5WieFsaj5aMSyZoKQ" />
 			        <input type="hidden" name="ref" defaultValue="web-morgondag" />
 			        <input type="submit" name="submit" id="submit" value={this.state.ctaText} />
-			        <p><em>(PS. Right now it will mostly be about Lunar Soil.)</em></p>
+			        <p><em>(PS. Please check your spamfolder for a confirmation mail and mark it as not-spam)</em></p>
 			      </form>
 			</div>
 		</section>)
