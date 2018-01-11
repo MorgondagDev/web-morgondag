@@ -68,11 +68,9 @@ export default class extends React.Component {
 			return res.json()
 		}).then((json) => {
 			this.setState({
-				//medium: json.medium,
 				twitter: json.twitter,
 				instagram: json.instagram,
-				news: json.news,
-				archive: json.archive
+				blog: json.blog
 			})
 		}).catch((ex) => {
 			console.log(ex)
@@ -164,17 +162,17 @@ export default class extends React.Component {
 		}
 	}
 
-	renderNews(){
-		if(this.state.news){
+	renderBlog(){
+		if(this.state.blog){
 			return (
 				<ul className="cards">
-					{this.state.news.map((post) => {
-						return <li key={post.id}>
-						<a target="_blank" title={post.title} href={post.url}><img width="200" src={post.image_url} alt={post.title}/>
+					{this.state.blog.map((post, index) => {
+						return <li key={index}>
+						<a target="_blank" title={post.title} href={post.url}><img width="200" src={post.img} alt={post.title}/>
 							<div className="meta">
 								<h2>{post.title}</h2>
 								<p>{moment(post.date).format('MMMM DD, YYYY')}</p>
-								<p>{post.description}</p>
+
 							</div>
 						</a>
 						</li>
@@ -209,12 +207,14 @@ export default class extends React.Component {
 	*/
 
 	onSubmit(e){
+
+		var name = document.querySelector('input[name="name"]').value
 		try {
-			var value = document.querySelector('input[name="name"]').value
-			if(value.length > 0){
-				if(value.substring(0, 2) == "5a" || value.substring(0, 2) == "59" ||  value.substring(0, 2) == "59"){
+			if(name.length > 0){
+				if(name.substring(0, 2) == "5a" || name.substring(0, 2) == "59" ||  name.substring(0, 2) == "59"){
 					e.preventDefault();
 					location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+					return;
 				}
 			}
 		} catch(e){
@@ -227,7 +227,7 @@ export default class extends React.Component {
 			<div className="center">
 				<h1> {'<3'} </h1>
 				<p className="msg">Fill in your email below and we will send you our finest breadcrumbs in form of secrets, offers and most importantly updates and awesome news about our next playable universe!</p>
-			      <form action="http://send.morgondag.nu/subscribe" method="POST" acceptCharset="utf-8" onSubmit={this.onSubmit}>
+			      <form action="" method="POST" acceptCharset="utf-8" onSubmit={this.onSubmit}>
 
 			      	<div className="box">
 			      		<div className="inputfield">
@@ -289,7 +289,11 @@ export default class extends React.Component {
 					</div>
 
 					<div className="columns">
-						{/*this.renderNews()*/}
+						<p><br/></p>
+						<p><br/></p>
+						<p><br/></p>
+						<h3>Blog and news:</h3>
+						{this.renderBlog()}
 						<div className="clearfix"></div>
 					</div>
 
