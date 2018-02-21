@@ -241,6 +241,7 @@ export default class extends React.Component {
 			        <br />
 			        <input type="hidden" name="list" defaultValue="XgSgS5WieFsaj5aMSyZoKQ" />
 			        <input type="hidden" name="ref" defaultValue="web-morgondag" />
+			        <input type="hidden" name="subform" value="yes"/>
 			        <input type="submit" name="submit" id="submit" value={this.state.ctaText} />
 			        <p><em>(PS. Please check your spamfolder for a confirmation mail and mark it as not-spam)</em></p>
 			      </form>
@@ -352,9 +353,6 @@ export default class extends React.Component {
 
 						<li>
 							<a href="https://www.youtube.com/channel/UCIGlLCIdHqDhUiao1LmAFoA" title="Morgondag on Youtube">Youtube</a>
-						</li>
-						<li>
-							<a href="http://patreon.com/morgondag" title="Morgondag on Patreon">patreon</a>
 						</li>
 						<li>
 							<a href="https://itunes.apple.com/us/artist/morgondag/id717203990" title="Morgondag on IOS">appstore</a>
