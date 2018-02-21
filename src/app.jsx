@@ -227,8 +227,7 @@ export default class extends React.Component {
 			<div className="center">
 				<h1> {'<3'} </h1>
 				<p className="msg">Fill in your email below and we will send you our finest breadcrumbs in form of secrets, offers and most importantly updates and awesome news about our next playable universe!</p>
-			      <form action="" method="POST" acceptCharset="utf-8" onSubmit={this.onSubmit}>
-
+			      <form action="http://send.morgondag.nu/subscribe" method="POST" acceptCharset="utf-8">
 			      	<div className="box">
 			      		<div className="inputfield">
 			      		<label htmlFor="name">Name:</label>
