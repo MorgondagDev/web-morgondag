@@ -34,8 +34,11 @@ export default class extends React.Component {
 		}
 
 		this.incrementArchive = this.incrementArchive.bind(this);
-		if( location.href.indexOf("https") > -1){
-			location.href = "http://morgondag.nu"
+
+		if(typeof windows != 'undefined'){
+			if( windows.location.href.indexOf("https") > -1){
+				windows.location.href = "http://morgondag.nu"
+			}
 		}
 	}
 
