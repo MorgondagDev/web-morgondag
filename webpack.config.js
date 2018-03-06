@@ -26,7 +26,7 @@ module.exports = {
       test: /\.styl?$/,
       loaders: ['style-loader', 'css-loader', 'stylus-loader']
     }, {
-      test: /.*\.(gif|png|jpe?g|svg|ico)$/i,
+      test: /.*\.(gif|png|jpe?g|svg|ico|jpg)$/i,
       loaders: [
         'file?name=img/[name].[ext]',
         'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'

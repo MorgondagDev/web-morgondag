@@ -8,11 +8,13 @@ import {Promise} from 'es6-promise'
 import Twitter from './components/twitter.jsx'
 
 const ctas = [
-	'Signup!',
-	'Send',
-	'Get the info!',
-	'Add your email!',
-	'Feel the love!'
+	'Sign up',
+	'GoGoGo',
+	'Subscribe',
+	'Play',
+	'Add',
+	'+5 Love',
+	'+100 XP'
 ]
 
 let archiveCount = 0;
@@ -23,17 +25,13 @@ export default class extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			//medium: props.medium,
 			twitter:props.twitter,
 			instagram:props.instagram,
 			news: props.news,
-			archive: props.archive,
 			cta:0,
 			ctaText:'Signup',
 			t: Date.now()
 		}
-
-		this.incrementArchive = this.incrementArchive.bind(this);
 
 		if(typeof windows != 'undefined'){
 			if( windows.location.href.indexOf("https") > -1){
@@ -188,30 +186,6 @@ export default class extends React.Component {
 		}
 	}
 
-	/*
-	renderMedium(){
-		if(this.state.medium){
-			return(
-				<ul className="cards">
-					{this.state.medium.map((post) => {
-					  return (
-						  <li key={post.id}>
-							<a target="_blank" title={post.title} href={post.url}><img width="200" src={post.img} alt={post.title}/>
-									<div className="meta">
-									<h2>{post.title}</h2>
-									<p>{post.date}</p>
-									<p>{post.description}</p>
-								</div>
-							</a>
-						  </li>
-					  )
-					})}
-				</ul>
-			)
-		}
-	}
-	*/
-
 	onSubmit(e){
 
 		var name = document.querySelector('input[name="name"]').value
@@ -231,25 +205,25 @@ export default class extends React.Component {
 	renderSignup(){
 		return(<section className="signup">
 			<div className="center">
-				<h1> {'<3'} </h1>
-				<p className="msg">Fill in your email below and we will send you our finest breadcrumbs in form of secrets, offers and most importantly updates and awesome news about our next playable universe!</p>
+				<img src="/img/spacebase19_banner.jpg" alt="Spacebase19 Free game! Sign up and play" title="Spacebase19 Free game! Sign up and play"/>
+				<p className="msg">Signup to our newsletter and play <strong>Spacebase 19</strong> for free!</p>
 			      <form action="http://send.morgondag.nu/subscribe" method="POST" acceptCharset="utf-8">
 			      	<div className="box">
 			      		<div className="inputfield">
-			      		<label htmlFor="name">Name:</label>
-			      			<input type="text" name="name" id="name" placeholder="My amazing name" required/>
+			      		<label htmlFor="name">Name/Alias:</label>
+			      			<input type="text" name="name" id="name" placeholder="Name/Alias" required title="Name/Alias"/>
 			      		</div>
 			      		<div className="inputfield">
 			      			<label htmlFor="email">Email:</label>
-			        		<input type="email" name="email" id="email" placeholder="amazing@mail.com" required />
+			        		<input type="email" name="email" id="email" placeholder="amazing@mail.com" required title="mail" />
 			        	</div>
 			        </div>
 			        <br />
 			        <input type="hidden" name="list" defaultValue="XgSgS5WieFsaj5aMSyZoKQ" />
 			        <input type="hidden" name="ref" defaultValue="web-morgondag" />
 			        <input type="hidden" name="subform" value="yes"/>
-			        <input type="submit" name="submit" id="submit" value={this.state.ctaText} />
-			        <p><em>(PS. Please check your spamfolder for a confirmation mail and mark it as not-spam)</em></p>
+			        <input type="submit" name="submit" id="submit" value={this.state.ctaText} title="Sign up"/>
+			        <p><em>PS. Please check your spamfolder for a confirmation mail and mark it as not-spam {'<3'}</em></p>
 			      </form>
 			</div>
 		</section>)
@@ -263,27 +237,31 @@ export default class extends React.Component {
 
 				</header>
 				<section className="main">
+					<div className="div-of-love">
+						<h1 title="Welcome!"> {'<3'} 😊</h1>
+					</div>
 
 					{this.renderSignup()}
-
-					<ul className="column-cards">
-						<li>
-							<a href="https://lunar-soil.com" className="game-card lunarsoil" title="Lunar Soil"></a>
-							<a href="https://lunar-soil.com" title="Lunar Soil"><h2>Lunar Soil</h2></a>
-							<a href="https://lunar-soil.com/" className="btn playBtn yellow" title="Play Lunar Soil">► Lunar Soil</a>
-						</li>
-						<li>
-							<a href="https://imprint-x.com" className="game-card imprintx" title="imprint-X"></a>
-							<a href="https://imprint-x.com" title="imprint-X"><h2>imprint-X</h2></a>
-							<a href="https://imprint-x.com/" className="btn playBtn" title="Play imprint-X">► imprint-X</a>
-						</li>
-						<li>
-							<a href="http://rymdresa.com" className="game-card rymdresa" title="RymdResa"></a>
-							<a href="http://rymdresa.com" title="RymdResa"><h2>RymdResa</h2></a>
-							<a href="http://rymdresa.com" className="btn playBtn purple" title="Play RymdResa">► RymdResa</a>
-						</li>
-					</ul>
-
+					<section className="games">
+						<h3>Our Games:</h3>
+						<ul className="column-cards">
+							<li>
+								<a href="https://lunar-soil.com" className="game-card lunarsoil" title="Lunar Soil"></a>
+								<a href="https://lunar-soil.com" title="Lunar Soil"><h2>Lunar Soil</h2></a>
+								<a href="https://lunar-soil.com/" className="btn playBtn yellow" title="Play Lunar Soil">► Lunar Soil</a>
+							</li>
+							<li>
+								<a href="https://imprint-x.com" className="game-card imprintx" title="imprint-X"></a>
+								<a href="https://imprint-x.com" title="imprint-X"><h2>imprint-X</h2></a>
+								<a href="https://imprint-x.com/" className="btn playBtn" title="Play imprint-X">► imprint-X</a>
+							</li>
+							<li>
+								<a href="http://rymdresa.com" className="game-card rymdresa" title="RymdResa"></a>
+								<a href="http://rymdresa.com" title="RymdResa"><h2>RymdResa</h2></a>
+								<a href="http://rymdresa.com" className="btn playBtn purple" title="Play RymdResa">► RymdResa</a>
+							</li>
+						</ul>
+					</section>
 					<div className="columns">
 						<div className="left">
 
@@ -303,19 +281,13 @@ export default class extends React.Component {
 						<div className="clearfix"></div>
 					</div>
 
-					<section>
-						{/*this.renderArchive() */}
-					</section>
-
-
 					<section className="team-info">
 						<h2>Morgondag</h2>
 						<h3>A Swedish Game Studio</h3>
 						<p>We publish, design, develop and create unique games filled with our own twist, story, atmosphere and a lot of love.</p>
 						<p> We are currently working on our next game <a href="https://lunar-soil.com" title="Lunar Soil">Lunar Soil</a>.
 						</p>
-						<p><br/></p>
-						<p>Follow Morgondag on <a href="http://twitter.com/MorgondagDev" title="Morgondag gamedeveloper on Twitter">Twitter</a> and <a href="https://instagram.com/morgondag" title="Morgondag gamedesign on Instagram">Instagram</a></p>
+
 					</section>
 
 					{this.renderMorgondagTwitter()}
@@ -329,7 +301,7 @@ export default class extends React.Component {
 					</div>
 
 					<section className="specialinstagrampadding">
-						<p><a href="https://instagram.com/morgondag" title="morgondag on instagram">Instagram</a></p>
+						<p>More pictures on Instagram <a href="https://instagram.com/morgondag" title="morgondag on instagram">here</a>.</p>
 					</section>
 					{this.renderInstagram()}
 
@@ -342,13 +314,13 @@ export default class extends React.Component {
 					<h2>Follow us!</h2>
 					<ul>
 						<li>
+							<a href="http://blog.morgondag.nu" title="Morgondag on Twitter">blog</a>
+						</li>
+						<li>
 							<a href="https://twitter.com/morgondagdev" title="Morgondag on Twitter">twitter</a>
 						</li>
 						<li>
 							<a href="https://www.facebook.com/Morgondag" title="Morgondag on Facebook">facebook</a>
-						</li>
-						<li>
-							<a href="http://www.indiedb.com/company/morgondag" title="Morgondag on IndieDB">indiedb</a>
 						</li>
 						<li>
 							<a href="https://instagram.com/morgondag" title="Morgondag on Instagram">instagram</a>
@@ -361,20 +333,16 @@ export default class extends React.Component {
 							<a href="https://www.youtube.com/channel/UCIGlLCIdHqDhUiao1LmAFoA" title="Morgondag on Youtube">Youtube</a>
 						</li>
 						<li>
-							<a href="https://itunes.apple.com/us/artist/morgondag/id717203990" title="Morgondag on IOS">appstore</a>
-						</li>
-						<li>
 							<a href="mailto:vendela@morgondag.nu" title="Morgondag email">email</a>
 						</li>
-						<li>
-							<a href="http://vendela-carlberg-larsson.com" title="Morgondag Vendela">Vendela</a>
-						</li>
-						<li>
-							<a href="http://kimaarnseth.com" title="Morgondag Kim">Kim</a>
-						</li>
 					</ul>
+					<div className="div-of-love">
+						<h1 title=":-)"> {'<3'} 😊</h1>
+					</div>
 				</section>
+
 				</section>
+
 			</containter>
 		)
 	}

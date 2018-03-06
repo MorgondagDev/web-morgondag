@@ -1,5 +1,18 @@
 
+
+
+.div-of-love
+	text-align center
+	h1
+		animation: hearth 0.5s linear infinite
+		padding-top 20px
+		margin 0
+
 .signup
+
+	img
+		margin-bottom 10px
+
 	.box
 		display block
 		*
@@ -28,38 +41,46 @@
 	input[type="submit"]
 		color white
 		font-weight bold
-		background red
 		min-width 160px
 		text-transform uppercase
 		animation: pulseBtn 4s linear infinite
 		cursor pointer
 		background none;
-		border-radius 0px;
+		border-radius 2px;
 		padding 10px 0
+		height 50px
+		line-height 30px
+		margin-bottom 16px
+		vertical-align top
 
 @keyframes hearth{
 	0%{
-		color: #7e817c
+		color: #f34788
+
 	}
 	50%{
-		color: darken(red,50%)
+		color: darken(#f34788,50%)
 	}
 	100%{
-		color: #7e817c
+		color: #f34788
 	}
 }
 
 @keyframes pulseBtn{
 	0%{
-		background: #7e817c
+		background: #de4c16
+		border solid 2px darken(#de4c16,25%)
 	}
 	25%{
-		background: green
+		background: #b9e1dc
+		border solid 2px darken(#b9e1dc,25%)
 	}
 	50%{
-		background: black
+		background: #66a098
+		border solid 2px darken(#66a098,25%)
 	}
 	100%{
-		background: #7e817c
+		background: #de4c16
+		border solid 2px darken(#de4c16,25%)
 	}
 }
