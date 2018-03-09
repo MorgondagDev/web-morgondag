@@ -109,7 +109,9 @@
 					height: 344px;
 				}
 			}
-
+			@media (max-width: 480px){
+				aside{display: none}
+			}
 			@media (max-width: 448px){
 				.wrapper{
 					padding-left: 5px;
@@ -166,6 +168,8 @@
 			</aside>
 
 			<a href="http://morgondag.nu" title="Morgondag"><img class="morgondag" src="http://rymdresa.com/img/morgondag.png" alt=""></a>
+
+			<a href="http://rymdresa.com" title="RymdResa Homepage">www.rymdresa.com</a>
 		</div>
 		<div class="pilot"></div>
 
@@ -177,9 +181,10 @@
 			}
 			function onVideo(e){
 				e.preventDefault();
+
 				console.log('click')
 				bigplayer.classList.remove('hidden')
-				playerFrame.setAttribute('src', 'http://www.youtube.com/embed/'+e.getAttribute('data-id')+'?autoplay=1&rel=0&color=white&autohide=1&vq=hd1080')
+				playerFrame.setAttribute('src', 'http://www.youtube.com/embed/'+e.target.getAttribute('data-id')+'?autoplay=1&rel=0&color=white&autohide=1&vq=hd1080')
 			}
 			var player = document.querySelector('#bigplayer')
 			var playerFrame = document.querySelector('#bigplayer iframe')
@@ -195,8 +200,8 @@
 				playbtns[i].addEventListener('click', onVideo)
 			}
 
-			if(window.innerWidth > 500){
-				for (var x = 0; x < links.length; i++) {
+			if(window.innerWidth < 750){
+				for (var x = 0; x < links.length; x++) {
 					links[x].addEventListener('click',onLink)
 				}
 			}
