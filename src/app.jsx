@@ -60,6 +60,9 @@ export default class extends React.Component {
 	}
 
 	componentDidMount(){
+		if(window){
+			window.location.replace("https://morgondag.io")
+		}
 		fetch('http://static.morgondag.nu/social.json', {
 			method: 'get',
 			headers: {
